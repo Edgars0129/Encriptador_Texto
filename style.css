@@ -40,28 +40,30 @@ body, html {
 .button-container { 
     grid-area: 3 / 2 / 4 / 3;
     display: flex;
-    gap: 2vmin;
+    gap: 24px;
     align-self: end;
 }
 
 .button-primary, .button-secondary {
     flex: 1;
-    height: clamp(40px, 6vh, 67px);
+    height: 67px;
     border-radius: 24px;
-    font-size: clamp(12px, 1.5vw, 16px);
+    font-size: 16px;
     cursor: pointer;
+    padding: 24px;
+    text-align: center;
 }
 
 .button-primary {
-    background-color: #0a3871;
+    background-color: #0A3871;
     color: white;
     border: none;
 }
 
 .button-secondary {
-    background-color: #d8dfe8;
-    color: #0a3871;
-    border: 1px solid #0a3871;
+    background-color: #D8DFE8;
+    color: #0A3871;
+    border: 1px solid #0A3871;
 }
 
 .div3 { 
@@ -73,17 +75,19 @@ body, html {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 2vmin;
+    padding: 32px;
     text-align: center;
-    width: clamp(200px, 20vw, 250px); 
+    width: 400px;
+    height: 100%;
 }
 
-.div3 .content {
+.div3-content {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-grow: 1;
+    width: 100%;
 }
 
 .div3 img {
@@ -105,14 +109,14 @@ body, html {
 
 .button-copy {
     width: 100%;
-    margin-top: 2vmin;
-    height: clamp(40px, 6vh, 67px);
+    height: 67px;
     border-radius: 24px;
-    font-size: clamp(12px, 1.5vw, 16px);
+    font-size: 16px;
     cursor: pointer;
-    background-color: white;
-    color: #0a3871;
-    border: 1px solid #0a3871;
+    background-color: #F3F5FC;
+    color: #0A3871;
+    border: 1px solid #0A3871;
+    margin-top: 32px;
 }
 
 .div2, .div5, .div8, .div9, .div10 {
@@ -123,7 +127,14 @@ body, html {
     .parent {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto 1fr auto auto;
-        padding: 2vmin;
+        gap: 20px;
+    }
+
+    .div3 {
+        grid-area: 5 / 1 / 6 / 2;
+        width: auto;
+        max-width: 100%;
+        margin: 20px 0;
     }
 
     .div1 {
@@ -137,12 +148,14 @@ body, html {
     .button-container {
         grid-area: 4 / 1 / 5 / 2;
         flex-direction: column;
+        gap: 24px;
     }
 
     .div3 {
         grid-area: 5 / 1 / 6 / 2;
         width: 100%;
-        padding: 4vmin;
+        padding: 32px;
+        margin-top: 64px;
     }
 
     .button-copy {
