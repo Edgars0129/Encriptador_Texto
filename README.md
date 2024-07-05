@@ -55,6 +55,3 @@ Este proyecto es un encriptador/desencriptador de texto desarrollado con HTML, C
 
 ## Contribuciones
 Las contribuciones son bienvenidas. Por favor, abre un issue para discutir los cambios que te gustaría hacer.
-
-## Licencia
-[Incluye aquí la licencia de tu proyecto, por ejemplo: MIT]
