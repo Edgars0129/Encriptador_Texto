@@ -30,6 +30,11 @@ body, html {
     color: #0A3871;
     overflow-y: auto;
     padding: 10px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    min-height: 200px;
 }
 
 .div4[contenteditable="true"]:empty:before {
@@ -70,35 +75,30 @@ body, html {
     grid-area: 1 / 3 / 4 / 4;
     background-color: white;
     border-radius: 32px;
-    box-shadow: 0 24px 32px -8px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     padding: 32px;
     text-align: center;
-    width: 250px;
-    height: 100%;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: none
 }
 
 .div3-content {
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 100%;
+    justify-content: center;
+    height: 100%;
 }
 
 .div3 img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 2vmin;
-}
-
-.div1 img, .div3 img {
-    max-width: 100%;
-    height: auto;
+    object-fit: contain;
+    margin: 0;
+    padding: 0;
+    display: block; 
 }
 
 .div3 h2 {
@@ -156,22 +156,21 @@ body, html {
     .button-container { 
         grid-area: 3 / 1 / 4 / 2;
         display: flex;
-        justify-content: center; /* Centra los botones horizontalmente */
+        justify-content: center;
         gap: 24px;
-        width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
-        max-width: 500px; /* Limita el ancho máximo para que no se extiendan demasiado en tablets más grandes */
-        margin: 0 auto; /* Centra el contenedor de botones en el espacio disponible */
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     .div3 { 
         grid-area: 4 / 1 / 5 / 2;
         width: 100%;
-        max-width: none;
-        margin-top: 20px;
+        max-width: 600px;
+        margin: 20px auto;
         background-color: white;
         border-radius: 24px;
         padding: 32px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .div3 h2 {
@@ -183,9 +182,9 @@ body, html {
     }
 
     .button-primary, .button-secondary {
-        flex: 0 1 auto; /* Permite que los botones se ajusten a su contenido */
-        min-width: 150px; /* Establece un ancho mínimo para los botones */
-        max-width: 200px; /* Establece un ancho máximo para los botones */
+        flex: 0 1 auto;
+        min-width: 150px;
+        max-width: 200px;
     }
 
     .button-primary, .button-secondary, .button-copy {
@@ -195,239 +194,59 @@ body, html {
 
     .button-copy {
         width: 100%;
-        margin-top: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .parent {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto 1fr auto auto;
-        gap: 20px;
-    }
-
-    .div3 {
-        grid-area: 5 / 1 / 6 / 2;
-        width: auto;
-        max-width: 100%;
-        margin: 20px 0;
-    }
-
-    .div1 {
-        grid-area: 1 / 1 / 2 / 2;
-    }
-
-    .div4 {
-        grid-area: 2 / 1 / 4 / 2;
-    }
-
-    .button-container {
-        grid-area: 4 / 1 / 5 / 2;
-        flex-direction: column;
-        gap: 24px;
-    }
-
-    .div3 {
-        grid-area: 5 / 1 / 6 / 2;
-        width: 100%;
-        padding: 32px;
-        margin-top: 64px;
-    }
-
-    .button-copy {
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .parent {
-        padding: 10px;
-    }
-    
-    .div3 {
-        padding: 20px;
-    }
-    
-    .button-primary, .button-secondary, .button-copy {
-        height: 50px;
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .parent {
-        grid-template-columns: 1fr 2fr 1fr;
-    }
-}
-
-@media (max-width: 992px) {
-    .parent {
-        grid-template-columns: 1fr 3fr;
-    }
-    .div3 {
-        grid-column: 1 / -1;
-    }
-}
-
-@media (hover: none) {
-    .button-primary, .button-secondary, .button-copy {
-        padding: 12px;
-    }
-}
-
-@media (max-width: 768px) {
-    .button-container {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
-
-/* Estilos base (se aplican a todos los tamaños de pantalla) */
-/* ... (mantén los estilos base que ya tenías) ... */
-
-/* Estilos para tablets y dispositivos de tamaño medio */
-@media (min-width: 601px) and (max-width: 1024px) {
-    body, html {
-        background-color: #F3F5FC;
-    }
-
-    .parent {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto 1fr auto;
-        gap: 20px;
-        padding: 40px;
-    }
-
-    .div1 { 
-        grid-area: 1 / 1 / 2 / 2;
-    }
-
-    .div4 { 
-        grid-area: 2 / 1 / 3 / 2;
-        background-color: white;
-        border-radius: 24px;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        font-size: 18px;
-    }
-
-    .button-container { 
-        grid-area: 3 / 1 / 4 / 2;
-        display: flex;
-        justify-content: center;
-        gap: 24px;
-        width: 100%;
-        max-width: 600px;
-        margin: 20px auto;
-    }
-
-    .button-primary, .button-secondary {
-        flex: 0 1 auto;
-        min-width: 120px;
-        max-width: 200px;
-        font-size: 16px;
-        padding: 12px 20px;
-    }
-
-    .div3 { 
-        grid-area: 4 / 1 / 5 / 2;
-        width: 100%;
-        max-width: 600px;
-        margin: 20px auto;
-        background-color: white;
-        border-radius: 24px;
-        padding: 32px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .div3 h2 {
-        font-size: 20px;
-    }
-
-    .div3 p {
-        font-size: 16px;
-    }
-
-    .button-copy {
-        width: 100%;
         max-width: 400px;
         margin: 20px auto 0;
-        font-size: 16px;
-        padding: 12px 20px;
     }
 }
 
-/* Ajustes específicos para tablets más pequeñas */
-@media (min-width: 601px) and (max-width: 768px) {
+@media (max-width: 768px) {
     .parent {
-        padding: 20px;
-    }
-
-    .button-container {
+        display: flex;
         flex-direction: column;
-        align-items: center;
+        height: auto;
+        padding: 20px;
     }
 
-    .button-primary, .button-secondary {
+    .div1, .div4, .button-container, .div3 {
         width: 100%;
-        max-width: 300px;
-    }
-}
-
-/* Ajustes para dispositivos móviles */
-@media (max-width: 600px) {
-    /* ... (mantén tus estilos actuales para móviles) ... */
-}
-
-/* Ajustes para pantallas grandes */
-@media (min-width: 1025px) {
-    /* ... (mantén tus estilos actuales para pantallas grandes) ... */
-}
-
-/* Estilos para móviles (hasta 767px) */
-@media (max-width: 767px) {
-    .parent {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto 1fr auto;
-        gap: 20px;
-        padding: 20px;
-    }
-
-    .div1 { 
-        grid-area: 1 / 1 / 2 / 2;
-    }
-
-    .div4 { 
-        grid-area: 2 / 1 / 3 / 2;
-        background-color: white;
-        border-radius: 24px;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        font-size: 16px;
+        max-width: 100%;
         margin-bottom: 20px;
     }
 
+    .div1 img {
+        max-width: 100px;
+        height: auto;
+    }
+
+    .div4 { 
+        background-color: white;
+        border-radius: 24px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-size: 16px;
+    }
+
     .button-container { 
-        grid-area: 3 / 1 / 4 / 2;
         flex-direction: column;
+        align-items: center;
         gap: 15px;
     }
 
     .button-primary, .button-secondary {
         width: 100%;
+        max-width: 300px;
         height: 50px;
         font-size: 16px;
         border-radius: 24px;
+        margin-bottom: 10px;
     }
 
     .div3 { 
-        grid-area: 4 / 1 / 5 / 2;
+        max-width: 100%;
+        padding: 20px;
         background-color: white;
         border-radius: 24px;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        
         text-align: center;
     }
 
@@ -455,5 +274,26 @@ body, html {
         background-color: #F3F5FC;
         color: #0A3871;
         border: 1px solid #0A3871;
+    }
+}
+
+@media (max-width: 480px) {
+    .parent {
+        padding: 10px;
+    }
+    
+    .div3 {
+        padding: 20px;
+    }
+    
+    .button-primary, .button-secondary, .button-copy {
+        height: 50px;
+        font-size: 14px;
+    }
+}
+
+@media (hover: none) {
+    .button-primary, .button-secondary, .button-copy {
+        padding: 12px;
     }
 }
